@@ -1,23 +1,22 @@
+let movies = document.getElementById("movies");
 
-let movies= document.getElementById("movies");
+const setrating = (rating) => {
+  if (rating >= 7) {
+    return `badge-success`;
+  } else if (rating >= 5 && rating < 7) {
+    return `badge-warning`;
+  } else {
+    return `badge-danger`;
+  }
+};
 
- const setrating = (rating) => {
-	 if( rating >= 7){
-		 return `badge-success`
-	 } else if ( rating >= 5 && rating < 7){
-		 return `badge-warning`
-	 } else {
-		 return `badge-danger`
-	 } 
- }
-  
 let result = ``;
 
-movieArr.forEach((mvimg) =>{
-	result += ` <div class="col-sm-4 mt-3" >
+movieArr.forEach((mvimg) => {
+  result += ` <div class="col-sm-4 mt-3" >
 				    <div class="card">
 					    <figure class="movieCard m-0">
-                          <img src="https://media.themoviedb.org/t/p/w500/${mvimg.poster_path || mvimg.backdrop_path }">
+                          <img src="https://media.themoviedb.org/t/p/w500/${mvimg.poster_path || mvimg.backdrop_path}">
 						    alt="" class="img-fluid">
 							<figcaption>
 							  <div class="titleInfo">
@@ -40,6 +39,6 @@ movieArr.forEach((mvimg) =>{
 						</figure>
 					</div>
 				 </div>`;
-})
+});
 
-movies.innerHTML=result;
+movies.innerHTML = result;
